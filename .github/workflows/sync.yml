@@ -13,7 +13,7 @@ jobs:
     outputs:
       sources: ${{ steps.list.outputs.sources }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "4.0"
@@ -34,7 +34,7 @@ jobs:
       matrix:
         source: ${{ fromJson(needs.discover.outputs.sources) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "4.0"
