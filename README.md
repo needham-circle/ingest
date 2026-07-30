@@ -1,15 +1,7 @@
 # Needham Circle ingest
 
 The daily sync that pulls events from Needham community sources into the
-public Needham Circle Google Calendar. It runs on GitHub Actions
-(.github/workflows/sync.yml, daily cron) with one matrix job per source, so a
-broken feed never blocks the others; the matrix is enumerated from the
-registered fetcher classes via `rake sync:list`.
-
-Each source is a fetcher class in `lib/needham_circle/sync/` that knows how
-to fetch and parse its feed into normalized `Sync::Event`s; the shared
-`Runner` upserts them into the calendar keyed by a per-source `source_id`, so
-re-running a sync updates events rather than duplicating them.
+public Needham Circle Google Calendar.
 
 ## Setup
 
